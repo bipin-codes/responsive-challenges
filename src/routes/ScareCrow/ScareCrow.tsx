@@ -1,48 +1,33 @@
 import React from "react";
-import { Body, Container, DetailsContainer, Header, Image } from "./styles";
-const ScareCrow = () => {
-  const backToHome = () => console.log("Back to home!");
+import { useNavigate } from "react-router-dom";
+
+import {
+  ActionToHome,
+  Body,
+  Container,
+  Description,
+  DetailsContainer,
+  Header,
+  Image,
+  MainHeader,
+} from "./styles";
+const ScareCrow: React.FC = () => {
+  const navigate = useNavigate();
+  const backToHome = () => navigate("/");
   return (
     <Container>
       <Header>404 NOT FOUND</Header>
       <Body>
         <Image src={require("assets/scarecrow/scare.png")} />
         <DetailsContainer>
-          <h3
-            style={{
-              margin: "2rem 0",
-              fontSize: "4rem",
-              color: "#333333",
-              lineHeight: "5.9rem",
-            }}
-          >
-            I have bad news for you
-          </h3>
-          <p
-            style={{
-              margin: "2rem 0",
-              fontSize: "1.5rem",
-              fontWeight: "400",
-              lineHeight: "2.25rem",
-            }}
-          >
+          <MainHeader>I have bad news for you</MainHeader>
+          <Description>
             The page you are looking for might be removed or is temporarily
             unavailable
-          </p>
-          <button
-            type="button"
-            onClick={backToHome}
-            style={{
-              margin: "2rem 0",
-              width: "13.5rem",
-              height: "5.3rem",
-              backgroundColor: "#333333",
-              color: "#fff",
-              fontWeight: "700",
-            }}
-          >
+          </Description>
+          <ActionToHome type="button" onClick={backToHome}>
             BACK TO HOME PAGE
-          </button>
+          </ActionToHome>
         </DetailsContainer>
       </Body>
     </Container>
