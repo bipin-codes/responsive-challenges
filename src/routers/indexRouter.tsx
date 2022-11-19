@@ -1,12 +1,17 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouteObject } from "react-router-dom";
 import App from "../App";
 import ScareCrow from "../routes/ScareCrow";
-const indexRouter = createBrowserRouter([
+const routes: Array<RouteObject> = [
   {
     path: "/",
     element: <App />,
   },
-  { path: "/scarecrow", element: <ScareCrow /> },
-]);
+  {
+    path: "/scarecrow",
+    element: <ScareCrow />,
+  },
+];
+
+const indexRouter = createBrowserRouter(routes);
 
 export default indexRouter;
