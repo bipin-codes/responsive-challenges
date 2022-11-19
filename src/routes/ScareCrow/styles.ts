@@ -22,6 +22,11 @@ export const Image = styled.img`
   width: 33.75rem;
   height: 28rem;
   margin: auto;
+
+  @media (max-width: 560px) {
+    width: 17.88rem;
+    height: 14.88rem;
+  }
 `;
 export const DetailsContainer = styled.div`
   display: flex;
