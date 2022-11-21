@@ -48,8 +48,18 @@ export const TeamGrid = styled.div`
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
   gap: 4rem;
+  div:nth-child(3n-1) {
+    margin: 4rem 0;
+  }
   @media (max-width: 1048px) {
+    gap: 2rem;
     grid-template-columns: auto auto;
+    div:nth-child(3n-1) {
+      margin: 0;
+    }
+    div:nth-child(even) {
+      margin: 2rem 0;
+    }
   }
 `;
 export const TeamCard = styled.div`
