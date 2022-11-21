@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-const Links = [{ to: "/scarecrow", label: "Not found Challenge." }];
+const Links = [
+  { to: "/scarecrow", label: "Not found Challenge." },
+  { to: "/teams", label: "My Team Challenge." },
+];
 const App = () => {
   return (
     <ul>

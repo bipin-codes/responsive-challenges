@@ -4,18 +4,19 @@ import { useNavigate } from "react-router-dom";
 import {
   ActionToHome,
   Body,
-  Container,
   Description,
   DetailsContainer,
   Header,
   Image,
   MainHeader,
+  StyledContainer,
 } from "./styles";
+
 const ScareCrow: React.FC = () => {
   const navigate = useNavigate();
   const backToHome = () => navigate("/");
   return (
-    <Container>
+    <StyledContainer>
       <Header>404 NOT FOUND</Header>
       <Body>
         <Image src={require("assets/scarecrow/scare.png")} />
@@ -30,7 +31,7 @@ const ScareCrow: React.FC = () => {
           </ActionToHome>
         </DetailsContainer>
       </Body>
-    </Container>
+    </StyledContainer>
   );
 };
 export default ScareCrow;

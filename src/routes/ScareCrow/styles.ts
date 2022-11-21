@@ -1,12 +1,9 @@
+import { Container, Heading } from "components/common-styled/common";
 import styled from "styled-components";
-export const Container = styled.div`
-  padding: 3rem;
+export const StyledContainer = styled(Container)`
   font-family: "Space Mono";
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 `;
-export const Header = styled.p`
+export const Header = styled(Heading)`
   font-size: 1.5rem;
   font-weight: 700;
 `;

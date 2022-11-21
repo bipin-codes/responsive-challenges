@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouteObject } from "react-router-dom";
-import App from "../App";
-import ScareCrow from "../routes/ScareCrow";
+import Teams from "routes/Teams";
+import App from "App";
+import ScareCrow from "routes/ScareCrow";
 const routes: Array<RouteObject> = [
   {
     path: "/",
@@ -9,6 +10,10 @@ const routes: Array<RouteObject> = [
   {
     path: "/scarecrow",
     element: <ScareCrow />,
+  },
+  {
+    path: "/teams",
+    element: <Teams />,
   },
 ];
 
