@@ -2,16 +2,23 @@ import {
   BlankContainer,
   Container,
   Heading,
-} from "components/common-styled/common";
-import styled from "styled-components";
+} from 'components/common-styled/common';
+import styled from 'styled-components';
 export const StyledContainer = styled(Container)`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 `;
 export const BaseRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 3rem 12rem;
+
+  @media (max-width: 1350px) {
+    padding: 3rem 5rem;
+  }
+  @media (max-width: 850px) {
+    padding: 3rem 2rem;
+  }
   @media (max-width: 700px) {
     flex-direction: column;
     padding: 0;
@@ -20,10 +27,10 @@ export const BaseRow = styled.div`
 export const LeftHeader = styled(Heading)`
   font-weight: 700;
   font-size: 2.25rem;
-  font-family: "PT Serif", serif;
+  font-family: 'PT Serif', serif;
 `;
 export const RightHeaderContainer = styled(BlankContainer)`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.125rem;
   flex-direction: column;
   display: flex;
@@ -74,13 +81,13 @@ export const MemberImage = styled.img`
   }
 `;
 export const MemberName = styled.p`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.125rem;
   font-weight: 600;
 `;
 export const MemberPosition = styled.p`
   writing-mode: vertical-rl;
-  font-family: "PT Serif", serif;
+  font-family: 'PT Serif', serif;
   font-weight: 400;
   font-size: 0.75rem;
 `;
