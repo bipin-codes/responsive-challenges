@@ -1,9 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./App.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './App.css';
 const Links = [
-  { to: "/scarecrow", label: "Not found Challenge." },
-  { to: "/teams", label: "My Team Challenge." },
+  { to: '/scarecrow', label: 'Not found Challenge.' },
+  { to: '/teams', label: 'My Team Challenge.' },
+  { to: '/interior', label: 'Interior Consultant Challenge.' },
 ];
 const App = () => {
   return (
