@@ -8,3 +8,6 @@ export const Container = styled.div`
 export const Heading = styled.p``;
 
 export const BlankContainer = styled.div``;
+export const Footer = styled.div`
+  padding: 5rem;
+`;

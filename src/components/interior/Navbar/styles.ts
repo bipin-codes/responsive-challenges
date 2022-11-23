@@ -16,10 +16,14 @@ export const Title = styled(Heading)`
   font-size: 0.875rem;
   font-weight: 200;
   padding: 0.8rem;
+  :hover {
+    border-bottom-color: white;
+    cursor: pointer;
+  }
 `;
 
 export const Menu = styled(BlankContainer)`
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 `;
 export const MenuItem = styled.li`
   margin: 0 2rem;
