@@ -13,13 +13,25 @@ const Content: React.FC = () => (
     </LeftContainer>
     <RightContainer>
       <img src="images/interior/photo1.png" alt="interior_image" />
-
       <div>
-        <img src="images/interior/photo2.png" alt="user" />
-        <p>Aliza Webber</p>
-        <p>Interior Designer</p>
+        <div>
+          <img src="images/interior/photo2.png" alt="user" />
+          <div>
+            <p>Aliza Webber</p>
+            <p>Interior Designer</p>
+          </div>
+        </div>
         <p>Designed in 2020 by Aliza Webber</p>
       </div>
+
+      {/* <div>
+        <div>
+          <img src="images/interior/photo2.png" alt="user" />
+          <p>Aliza Webber</p>
+          <p>Interior Designer</p>
+        </div>
+        <p>Designed in 2020 by Aliza Webber</p>
+      </div> */}
     </RightContainer>
   </StyledContainer>
 );

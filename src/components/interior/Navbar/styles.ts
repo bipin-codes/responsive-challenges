@@ -6,6 +6,9 @@ export const StyledContainer = styled(BlankContainer)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 760px) {
+    padding: 0.5rem;
+  }
 `;
 
 export const Title = styled(Heading)`
@@ -24,6 +27,9 @@ export const Title = styled(Heading)`
 
 export const Menu = styled(BlankContainer)`
   padding: 0.5rem 0;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 export const MenuItem = styled.li`
   margin: 0 2rem;
@@ -34,5 +40,14 @@ export const MenuItem = styled.li`
   :hover {
     border-bottom-color: white;
     cursor: pointer;
+  }
+`;
+
+export const MenuButton = styled.button`
+  border: none;
+  background: transparent;
+  color: #fff;
+  @media (min-width: 801px) {
+    display: none;
   }
 `;

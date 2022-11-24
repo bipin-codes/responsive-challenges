@@ -1,4 +1,3 @@
-import { Footer } from "components/common-styled/common";
 import Content from "components/interior/Content";
 
 import Navbar from "components/interior/Navbar";
@@ -13,7 +12,6 @@ const Interior: React.FC = () => {
     <StyledContainer>
       <Navbar title={TITLE} menuItems={MENU_ITEMS} showCaps />
       <Content />
-      <Footer />
     </StyledContainer>
   );
 };

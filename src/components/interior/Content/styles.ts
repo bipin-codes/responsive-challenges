@@ -6,6 +6,13 @@ export const StyledContainer = styled(BlankContainer)`
   flex-direction: row;
   padding: 3rem;
   flex: 1;
+  flex-wrap: wrap;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+  @media (max-width: 760px) {
+    padding: 0.5rem;
+  }
 `;
 export const LeftContainer = styled(BlankContainer)`
   color: #fff;
@@ -43,28 +50,46 @@ export const RightContainer = styled(BlankContainer)`
     width: 100%;
     height: auto;
   }
-  div {
+  > div {
     position: absolute;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-    padding: 3rem;
+    padding: 1rem 2rem;
     background: #181719;
-    bottom: -15.63rem;
-    right: 6.25rem;
-    p:nth-child(2) {
-      color: #fff;
-      font-weight: 500;
-      font-size: 0.875rem;
-      font-family: "Montserrat", sans-serif;
+    bottom: -4rem;
+    right: 2rem;
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        border-radius: 100px;
+        width: 50px;
+        height: auto;
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-left: 1rem;
+        justify-content: center;
+        p:nth-child(1) {
+          color: #fff;
+          font-weight: 500;
+          font-size: 0.875rem;
+          font-family: "Montserrat", sans-serif;
+        }
+        > p:nth-child(2) {
+          color: #828282;
+          font-weight: 500;
+          font-size: 0.75rem;
+          font-family: "Montserrat", sans-serif;
+        }
+      }
     }
-    p:nth-child(3) {
-      color: #828282;
-      font-weight: 500;
-      font-size: 0.75rem;
-      font-family: "Montserrat", sans-serif;
-    }
-    p:last-child {
-      width: 70%;
-      margin: auto;
+
+    > p:last-child {
+      margin-top: 1rem;
       color: #fff;
       font-family: "Lora", serif;
       font-weight: 700;
@@ -72,3 +97,25 @@ export const RightContainer = styled(BlankContainer)`
     }
   }
 `;
+
+// > div {
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   img {
+//     border-radius: 100px;
+//     width: 50px;
+//     height: auto;
+//   }
+// > p:nth-child(1) {
+//   color: #fff;
+//   font-weight: 500;
+//   font-size: 0.875rem;
+//   font-family: "Montserrat", sans-serif;
+// }
+// > p:nth-child(2) {
+//   color: #828282;
+//   font-weight: 500;
+//   font-size: 0.75rem;
+//   font-family: "Montserrat", sans-serif;
+// }
