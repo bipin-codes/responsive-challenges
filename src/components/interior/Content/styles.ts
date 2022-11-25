@@ -24,6 +24,9 @@ export const LeftContainer = styled(BlankContainer)`
     font-family: "Lora", serif;
     font-size: 3rem;
     font-weight: 500;
+    @media (max-width: 760px) {
+      font-size: 2.25rem;
+    }
   }
   p {
     margin-top: 3rem;
@@ -31,6 +34,10 @@ export const LeftContainer = styled(BlankContainer)`
     font-size: 1.5rem;
     font-weight: 400;
     width: 65%;
+    @media (max-width: 760px) {
+      font-size: 0.875rem;
+      width: 80%;
+    }
   }
   span {
     margin-top: 3rem;
@@ -95,19 +102,22 @@ export const RightContainer = styled(BlankContainer)`
       font-size: 1.5rem;
     }
   }
-  @media (max-width: 800px) {
-    > div {
-      bottom: 0;
-      > p:last-child {
-        font-size: 1.125rem;
-      }
-    }
-  }
+
   @media (max-width: 761px) {
     > div {
-      bottom: 9rem;
+      bottom: -4rem;
       left: 5rem;
       padding: 0.5rem;
+    }
+  }
+  @media (max-width: 300px) {
+    > div {
+      bottom: -4rem;
+      left: 1rem;
+      padding: 0.5rem;
+      > p:last-child {
+        font-size: 1rem;
+      }
     }
   }
 `;
