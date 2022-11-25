@@ -51,13 +51,12 @@ export const RightContainer = styled(BlankContainer)`
     height: auto;
   }
   > div {
-    position: absolute;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     padding: 1rem 2rem;
     background: #181719;
+    position: absolute;
     bottom: -4rem;
     right: 2rem;
-
     > div {
       display: flex;
       justify-content: space-between;
@@ -96,26 +95,19 @@ export const RightContainer = styled(BlankContainer)`
       font-size: 1.5rem;
     }
   }
+  @media (max-width: 800px) {
+    > div {
+      bottom: 0;
+      > p:last-child {
+        font-size: 1.125rem;
+      }
+    }
+  }
+  @media (max-width: 761px) {
+    > div {
+      bottom: 9rem;
+      left: 5rem;
+      padding: 0.5rem;
+    }
+  }
 `;
-
-// > div {
-//   position: absolute;
-//   bottom: 0;
-//   right: 0;
-//   img {
-//     border-radius: 100px;
-//     width: 50px;
-//     height: auto;
-//   }
-// > p:nth-child(1) {
-//   color: #fff;
-//   font-weight: 500;
-//   font-size: 0.875rem;
-//   font-family: "Montserrat", sans-serif;
-// }
-// > p:nth-child(2) {
-//   color: #828282;
-//   font-weight: 500;
-//   font-size: 0.75rem;
-//   font-family: "Montserrat", sans-serif;
-// }
