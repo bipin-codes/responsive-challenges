@@ -19,7 +19,8 @@ import {
   StyledContentRightTopContainer,
   StyledContentLeft,
   StyledContentRightTitle,
-  FeaturesContainaer,
+  FeaturesContainer,
+  StyledContentRightDescription,
 } from './styles';
 const Header = () => (
   <>
@@ -94,38 +95,46 @@ const Content: React.FC<{
     </StyledContentLeft>
     <StyledContentRight>
       <StyledContentRightTopContainer>
-        <FeaturesContainaer>
+        <FeaturesContainer>
           <span className="material-symbols-outlined restro-icon">
             restaurant_menu
           </span>
           <StyledContentRightDetail>
             <StyledContentRightTitle>Yields</StyledContentRightTitle>
-            <p>12 servings</p>
+            <StyledContentRightDescription>
+              12 servings
+            </StyledContentRightDescription>
           </StyledContentRightDetail>
-        </FeaturesContainaer>
+        </FeaturesContainer>
       </StyledContentRightTopContainer>
       <StyledContentRightBottomContainer>
-        <FeaturesContainaer>
+        <FeaturesContainer>
           <span className="material-symbols-outlined">schedule</span>
           <StyledContentRightDetail>
             <StyledContentRightTitle>PREP TIME</StyledContentRightTitle>
-            <p>45 minutes</p>
+            <StyledContentRightDescription>
+              45 minutes
+            </StyledContentRightDescription>
           </StyledContentRightDetail>
-        </FeaturesContainaer>
-        <FeaturesContainaer>
+        </FeaturesContainer>
+        <FeaturesContainer>
           <span className="material-symbols-outlined">schedule</span>
           <StyledContentRightDetail>
             <StyledContentRightTitle>COOK TIME</StyledContentRightTitle>
-            <p>1 hour</p>
+            <StyledContentRightDescription>
+              1 hour
+            </StyledContentRightDescription>
           </StyledContentRightDetail>
-        </FeaturesContainaer>
-        <FeaturesContainaer>
+        </FeaturesContainer>
+        <FeaturesContainer>
           <span className="material-symbols-outlined">schedule</span>
           <StyledContentRightDetail>
             <StyledContentRightTitle>TOTAL TIME</StyledContentRightTitle>
-            <p>7,745 hours</p>
+            <StyledContentRightDescription>
+              7,745 hours
+            </StyledContentRightDescription>
           </StyledContentRightDetail>
-        </FeaturesContainaer>
+        </FeaturesContainer>
       </StyledContentRightBottomContainer>
     </StyledContentRight>
   </StyledContent>
