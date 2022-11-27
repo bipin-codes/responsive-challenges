@@ -13,6 +13,13 @@ import {
   StyledHeading,
   Subheading,
   Instruction,
+  StyledContentRight,
+  StyledContentRightBottomContainer,
+  StyledContentRightDetail,
+  StyledContentRightTopContainer,
+  StyledContentLeft,
+  StyledContentRightTitle,
+  FeaturesContainaer,
 } from './styles';
 const Header = () => (
   <>
@@ -49,38 +56,78 @@ const Content: React.FC<{
   instructions: Array<{ heading: string; content: string }>;
 }> = ({ instructions }) => (
   <StyledContent>
-    <Subheading>Ingredients</Subheading>
-    <RecipeDetail
-      title="Graham Cracker Crust"
-      items={[
-        '1 and 1/2 cups (150g) graham cracker crumbs (about 10 full sheet graham crackers)',
-        '5 Tablespoons (70g) unsalted butter, melted',
-        '1/4 cup (50g) granulated sugar',
-      ]}
-    />
-    <RecipeDetail
-      title="Cheesecake"
-      items={[
-        'four 8-ounce blocks (904g) full-fat cream cheese, softened to room temperature',
-        '1 cup (200g) granulated sugar',
-        '1 cup (240g) full-fat sour cream, at room temperature',
-        '1 teaspoon pure vanilla extract',
-        '2 teaspoons fresh lemon juice (optional, but recommended)',
-        '3 large eggs, at room temperature',
-        'topping suggestions: salted caramel, lemon curd, strawberry topping, chocolate ganache, red wine chocolate ganache, fresh fruit, whipped cream, or raspberry sauce (recipe in notes) ',
-      ]}
-    />
+    <StyledContentLeft>
+      <Subheading>Ingredients</Subheading>
+      <RecipeDetail
+        title="Graham Cracker Crust"
+        items={[
+          '1 and 1/2 cups (150g) graham cracker crumbs (about 10 full sheet graham crackers)',
+          '5 Tablespoons (70g) unsalted butter, melted',
+          '1/4 cup (50g) granulated sugar',
+        ]}
+      />
+      <RecipeDetail
+        title="Cheesecake"
+        items={[
+          'four 8-ounce blocks (904g) full-fat cream cheese, softened to room temperature',
+          '1 cup (200g) granulated sugar',
+          '1 cup (240g) full-fat sour cream, at room temperature',
+          '1 teaspoon pure vanilla extract',
+          '2 teaspoons fresh lemon juice (optional, but recommended)',
+          '3 large eggs, at room temperature',
+          'topping suggestions: salted caramel, lemon curd, strawberry topping, chocolate ganache, red wine chocolate ganache, fresh fruit, whipped cream, or raspberry sauce (recipe in notes) ',
+        ]}
+      />
 
-    <Subheading>Instructions</Subheading>
-    {instructions.map((instruction, idx) => (
-      <Instruction>
-        <Idx>{idx + 1}</Idx>
-        <div>
-          <InstructionHeading>{instruction.heading}</InstructionHeading>
-          <InstructionDescription>{instruction.content}</InstructionDescription>
-        </div>
-      </Instruction>
-    ))}
+      <Subheading>Instructions</Subheading>
+      {instructions.map((instruction, idx) => (
+        <Instruction>
+          <Idx>{idx + 1}</Idx>
+          <div>
+            <InstructionHeading>{instruction.heading}</InstructionHeading>
+            <InstructionDescription>
+              {instruction.content}
+            </InstructionDescription>
+          </div>
+        </Instruction>
+      ))}
+    </StyledContentLeft>
+    <StyledContentRight>
+      <StyledContentRightTopContainer>
+        <FeaturesContainaer>
+          <span className="material-symbols-outlined restro-icon">
+            restaurant_menu
+          </span>
+          <StyledContentRightDetail>
+            <StyledContentRightTitle>Yields</StyledContentRightTitle>
+            <p>12 servings</p>
+          </StyledContentRightDetail>
+        </FeaturesContainaer>
+      </StyledContentRightTopContainer>
+      <StyledContentRightBottomContainer>
+        <FeaturesContainaer>
+          <span className="material-symbols-outlined">schedule</span>
+          <StyledContentRightDetail>
+            <StyledContentRightTitle>PREP TIME</StyledContentRightTitle>
+            <p>45 minutes</p>
+          </StyledContentRightDetail>
+        </FeaturesContainaer>
+        <FeaturesContainaer>
+          <span className="material-symbols-outlined">schedule</span>
+          <StyledContentRightDetail>
+            <StyledContentRightTitle>COOK TIME</StyledContentRightTitle>
+            <p>1 hour</p>
+          </StyledContentRightDetail>
+        </FeaturesContainaer>
+        <FeaturesContainaer>
+          <span className="material-symbols-outlined">schedule</span>
+          <StyledContentRightDetail>
+            <StyledContentRightTitle>TOTAL TIME</StyledContentRightTitle>
+            <p>7,745 hours</p>
+          </StyledContentRightDetail>
+        </FeaturesContainaer>
+      </StyledContentRightBottomContainer>
+    </StyledContentRight>
   </StyledContent>
 );
 

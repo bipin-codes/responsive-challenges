@@ -29,7 +29,45 @@ export const StyledDescription = styled(BlankContainer)`
 
 export const StyledContent = styled(BlankContainer)`
   margin: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 `;
+export const StyledContentLeft = styled(BlankContainer)`
+  flex: 1;
+`;
+export const StyledContentRight = styled(BlankContainer)`
+  box-shadow: 0px 0px 20px 0px #0000001a;
+  border-radius: 0.75rem;
+  .restro-icon {
+    color: #f2994a;
+  }
+`;
+export const StyledContentRightBottomContainer = styled(BlankContainer)`
+  margin: 0rem 5rem 5rem 5rem;
+`;
+export const StyledContentRightTopContainer = styled(BlankContainer)`
+  margin: 5rem 5rem 0 5rem;
+`;
+
+export const FeaturesContainaer = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 0;
+`;
+export const StyledContentRightDetail = styled(BlankContainer)`
+  font-family: 'Montserrat', sans-serif;
+`;
+
+export const StyledContentRightTitle = styled.p`
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #bdbdbd;
+`;
+export const StyledContentRightDescription = styled.p`
+  font-size: 0.875rem;
+`;
+
 export const Subheading = styled(Heading)`
   font-weight: 700;
   font-size: 1.5rem;
