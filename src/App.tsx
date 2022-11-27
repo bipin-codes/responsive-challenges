@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 const Links = [
-  { to: "/scarecrow", label: "Not found Challenge." },
-  { to: "/teams", label: "My Team Challenge." },
-  { to: "/interior", label: "Interior Consultant Challenge." },
-  { to: "/recipe", label: "Recipe page Challenge." },
-  { to: "/gallery", label: "Gallery Challenge." },
+  { to: "/scarecrow", label: "Not found challenge." },
+  { to: "/teams", label: "My team challenge." },
+  { to: "/interior", label: "Interior consultant challenge." },
+  { to: "/recipe", label: "Recipe page challenge." },
+  { to: "/gallery", label: "Gallery challenge." },
+  { to: "/checkout", label: "Checout page challenge." },
 ];
 const App = () => {
   return (
