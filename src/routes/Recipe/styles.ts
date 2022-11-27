@@ -35,7 +35,6 @@ export const StyledDescription = styled(BlankContainer)`
     font-style: italic;
     margin-left: 0.5rem;
   }
-
   @media (max-width: 700px) {
     width: 100%;
   }
