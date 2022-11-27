@@ -21,3 +21,32 @@ code {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
+
+.title {
+  text-align: center;
+  margin-top: 5rem;
+}
+.sub-title {
+  text-align: center;
+  margin-bottom: 5rem;
+  color: #bababa;
+  font-weight: 800;
+  font-size: 0.875rem;
+}
+.routes-list {
+  text-align: center;
+  width: 20%;
+  margin: auto;
+}
+.routes-list a {
+  text-decoration: none;
+}
+.route-item {
+  list-style: none;
+  text-align: left;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
