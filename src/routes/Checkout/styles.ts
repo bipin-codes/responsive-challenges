@@ -92,6 +92,18 @@ export const Cart = styled.div`
   border-radius: 12px;
   margin: 6rem 0;
   padding: 2rem;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    border-top: 1px solid #bdbdbd;
+    padding: 1rem 0;
+    > p {
+      font-weight: 600;
+    }
+  }
+
   @media (max-width: 850px) {
     order: 1;
   }

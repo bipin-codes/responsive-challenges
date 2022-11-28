@@ -114,6 +114,14 @@ const Checkout = () => {
           {cart.map((item) => (
             <CartItem {...item}></CartItem>
           ))}
+          <div>
+            <p>Shipping</p>
+            <p>$19</p>
+          </div>
+          <div>
+            <p>Total</p>
+            <p>$148.98</p>
+          </div>
         </Cart>
       </Content>
     </StyledContainer>
