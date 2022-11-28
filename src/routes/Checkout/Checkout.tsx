@@ -27,8 +27,10 @@ const CartItem: React.FC<{
     <ProductImage src={image} alt={name} />
     <ProductDetail>
       <p>{name}</p>
-      <span>{discounted_price}</span>
-      <span>{price}</span>
+      <div>
+        <span>{discounted_price}</span>
+        <span>{price}</span>
+      </div>
       <div>
         <button type="button">-</button>
         <span>{1}</span>

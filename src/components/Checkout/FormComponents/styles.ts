@@ -34,6 +34,12 @@ export const InputContainer = styled.div`
     font-size: 1rem;
     color: #828282;
   }
+  @media (max-width: 430px) {
+    padding: 0.5rem;
+  }
+  @media (max-width: 400px) {
+    padding: 0.2rem;
+  }
 `;
 
 export const AckContainer = styled(FormRow)`
