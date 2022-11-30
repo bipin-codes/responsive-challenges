@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import MobileMenuPortal from "./MobileMenu/MobileMenu";
-import { Menu, MenuButton, MenuItem, StyledContainer, Title } from "./styles";
+import React, { useState } from 'react';
+import MobileMenuPortal from './MobileMenu/MobileMenu';
+import { Menu, MenuButton, MenuItem, StyledContainer, Title } from './styles';
 
 const Navbar: React.FC<{
   title?: string;
   menuItems?: string[];
   showCaps?: boolean;
-}> = ({ title, menuItems }) => {
+  theme: 'dark' | 'light';
+}> = ({ title, menuItems, theme }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);
@@ -14,8 +15,8 @@ const Navbar: React.FC<{
 
   return (
     <StyledContainer>
-      <Title>
-        <span>{title ?? "New Title"}</span>
+      <Title theme={theme}>
+        <span>{title ?? 'New Title'}</span>
       </Title>
       <MenuButton type="button" onClick={toggleMenu}>
         <span className="material-symbols-outlined">menu</span>
@@ -23,21 +24,23 @@ const Navbar: React.FC<{
       <Menu>
         <ul
           style={{
-            display: "flex",
-            listStyle: "none",
-            justifyContent: "space-evenly",
-            color: "white",
+            display: 'flex',
+            listStyle: 'none',
+            justifyContent: 'space-evenly',
+            color: theme === 'dark' ? 'white' : 'black',
           }}
         >
           {menuItems
             ? menuItems.map((item, idx) => (
-                <MenuItem key={idx}>{item}</MenuItem>
+                <MenuItem theme={theme} key={idx}>
+                  {item}
+                </MenuItem>
               ))
             : null}
         </ul>
       </Menu>
       {mobileMenu ? (
-        <MobileMenuPortal onClose={toggleMenu} items={menuItems ?? [""]} />
+        <MobileMenuPortal onClose={toggleMenu} items={menuItems ?? ['']} />
       ) : null}
     </StyledContainer>
   );
