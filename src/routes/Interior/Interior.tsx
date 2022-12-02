@@ -11,7 +11,7 @@ const MENU_ITEMS = ['Home', 'Collections', 'About', 'Contact'];
 const Interior: React.FC = () => {
   return (
     <StyledContainer>
-      <Navbar theme="dark" title={TITLE} menuItems={MENU_ITEMS} showCaps />
+      <Navbar title={TITLE} menuItems={MENU_ITEMS} showCaps />
       <Content />
       <Footer />
     </StyledContainer>
