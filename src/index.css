@@ -35,7 +35,7 @@ code {
 }
 .routes-list {
   text-align: center;
-  width: 20%;
+  width: 30%;
   margin: auto;
 }
 .routes-list a {
@@ -49,4 +49,19 @@ code {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 700;
+}
+
+@media (max-width: 1500px) {
+  .home {
+    padding: 2rem;
+  }
+  .routes-list {
+    width: 100%;
+  }
+  .title {
+    text-align: left;
+  }
+  .sub-title {
+    text-align: left;
+  }
 }
