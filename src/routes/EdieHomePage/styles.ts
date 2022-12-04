@@ -1,10 +1,10 @@
-import { BlankContainer, Heading } from "components/common-styled/common";
-import styled from "styled-components";
+import { BlankContainer, Heading } from 'components/common-styled/common';
+import styled from 'styled-components';
 
 export const PaddedContainer = styled(BlankContainer)`
   margin: 2rem 0;
   padding: 0 15rem;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 `;
 export const SubHeading = styled(Heading)`
@@ -41,10 +41,15 @@ export const MissionAction = styled(BlankContainer)`
     flex-direction: row;
     background: #f2f2f2;
     justify-content: space-between;
+    padding: 0.25rem;
+    border-radius: 12px;
     input {
       border: none;
+      padding: 0.25rem;
+
       outline: none;
       flex: 1;
+      background: transparent;
       font-size: 1.25rem;
       ::placeholder {
         color: #bdbdbd;
@@ -110,4 +115,10 @@ export const ServiceCardTitle = styled(Heading)`
   margin: 1rem 0;
   font-size: 1.5rem;
   font-weight: 700;
+`;
+
+export const ProductsContainer = styled(BlankContainer)`
+  display: grid;
+  gap: 1rem;
+  grid-template: auto auto;
 `;
