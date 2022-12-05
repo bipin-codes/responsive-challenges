@@ -1,6 +1,6 @@
-import { Container } from 'components/common-styled/common';
-import Navbar from 'components/interior/Navbar';
-import { useState } from 'react';
+import { Container } from "components/common-styled/common";
+import Navbar from "components/interior/Navbar";
+import { useState } from "react";
 import {
   PaddedContainer,
   Image,
@@ -13,7 +13,10 @@ import {
   ServiceCardIconContainer,
   ServiceCardTitle,
   ProductsContainer,
-} from './styles';
+  ProductCard,
+  StyledSpan,
+  Span,
+} from "./styles";
 
 type ServiceType = { bg: string; icon: string; title: string; content: string };
 type ProductType = { category: string; img: string; name: string };
@@ -22,7 +25,7 @@ const Service: React.FC<{ service: ServiceType }> = ({ service }) => {
   return (
     <ServiceCard>
       <ServiceCardIconContainer color={service.bg}>
-        <span className="material-symbols-outlined">{service.icon}</span>
+        <StyledSpan>{service.icon}</StyledSpan>
       </ServiceCardIconContainer>
       <ServiceCardTitle>{service.title}</ServiceCardTitle>
       <p>{service.content}</p>
@@ -33,56 +36,58 @@ const Service: React.FC<{ service: ServiceType }> = ({ service }) => {
 
 const Product: React.FC<{ product: ProductType }> = ({ product }) => {
   return (
-    <>
-      <img src={`/images/eddit/${product.img}`} />
-    </>
+    <ProductCard>
+      <img src={`/images/eddie/${product.img}`} alt={"product_img"} />
+      <p>{product.category}</p>
+      <p>{product.name}</p>
+    </ProductCard>
   );
 };
 
 const EdieHomePage = () => {
   const [services] = useState<ServiceType[]>([
     {
-      bg: '#2D9CDB',
-      icon: 'edit',
-      title: 'UX/UX Design',
+      bg: "#2D9CDB",
+      icon: "edit",
+      title: "UX/UX Design",
       content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.',
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.",
     },
     {
-      bg: '#27AE60',
-      icon: 'code',
-      title: 'Front End',
+      bg: "#27AE60",
+      icon: "code",
+      title: "Front End",
       content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.',
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.",
     },
     {
-      bg: '#EB5757',
-      icon: 'storage',
-      title: 'Back End',
+      bg: "#EB5757",
+      icon: "storage",
+      title: "Back End",
       content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.',
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.",
     },
   ]);
   const [products] = useState<ProductType[]>([
     {
-      img: 'smarthome.jpg',
-      category: 'Full stack application',
-      name: 'Smart home dashboard',
+      img: "smarthome.jpg",
+      category: "Full stack application",
+      name: "Smart home dashboard",
     },
     {
-      img: 'onboard.png',
-      category: 'UX/UI design',
-      name: 'Onboard application',
+      img: "onboard.png",
+      category: "UX/UI design",
+      name: "Onboard application",
     },
     {
-      img: 'booking.png',
-      category: 'Mobile Application',
-      name: 'Booking system',
+      img: "booking.png",
+      category: "Mobile Application",
+      name: "Booking system",
     },
     {
-      img: 'juicy-product.png',
-      category: 'Front End application',
-      name: 'Juice product homepage',
+      img: "juice-product.png",
+      category: "Front End application",
+      name: "Juice product homepage",
     },
   ]);
   return (
@@ -90,17 +95,17 @@ const EdieHomePage = () => {
       <Navbar
         title="Edie"
         titleStyle={{
-          color: '#333333',
-          fontWeight: '800',
-          fontSize: '2.25rem',
-          fontFamily: 'Heebo',
+          color: "#333333",
+          fontWeight: "800",
+          fontSize: "2.25rem",
+          fontFamily: "Heebo",
         }}
-        menuItems={['Home', 'Services', 'Our Works', 'Clients', 'Contact']}
+        menuItems={["Home", "Services", "Our Works", "Clients", "Contact"]}
         menuItemStyle={{
           fontFamily: "'Poppins', sans-serif",
-          fontWeight: '500',
-          fontSize: '1.5rem',
-          color: '#333333',
+          fontWeight: "500",
+          fontSize: "1.5rem",
+          color: "#333333",
         }}
       />
       <PaddedContainer>
@@ -144,6 +149,10 @@ const EdieHomePage = () => {
             <Product product={product} />
           ))}
         </ProductsContainer>
+
+        <Span>
+          see more <StyledSpan>arrow_forward</StyledSpan>
+        </Span>
       </PaddedContainer>
     </Container>
   );
