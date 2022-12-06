@@ -1,4 +1,3 @@
-import { Container } from "components/common-styled/common";
 import Navbar from "components/interior/Navbar";
 import { useState } from "react";
 import {
@@ -9,7 +8,7 @@ import {
   Mission,
   MissionAction,
   ServiceCard,
-  ServiceContainer,
+  BaseFlexContainer,
   ServiceCardIconContainer,
   ServiceCardTitle,
   ProductsContainer,
@@ -19,6 +18,10 @@ import {
   TeamContainer,
   TeamDetails,
   TeamGrid,
+  TestimonialTitle,
+  ClientDetail,
+  MainContainer,
+  Footer,
 } from "./styles";
 
 type ServiceType = { bg: string; icon: string; title: string; content: string };
@@ -46,6 +49,16 @@ const Product: React.FC<{ product: ProductType }> = ({ product }) => {
     </ProductCard>
   );
 };
+
+const ContactForm = () => (
+  <MissionAction>
+    <p>Want us to contact you?</p>
+    <div>
+      <input type="text" placeholder="Email" />
+      <button>Join</button>
+    </div>
+  </MissionAction>
+);
 
 const EdieHomePage = () => {
   const [services] = useState<ServiceType[]>([
@@ -94,84 +107,111 @@ const EdieHomePage = () => {
     },
   ]);
   return (
-    <Container>
-      <Navbar
-        title="Edie"
-        titleStyle={{
-          color: "#333333",
-          fontWeight: "800",
-          fontSize: "2.25rem",
-          fontFamily: "Heebo",
-        }}
-        menuItems={["Home", "Services", "Our Works", "Clients", "Contact"]}
-        menuItemStyle={{
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: "500",
-          fontSize: "1.5rem",
-          color: "#333333",
-        }}
-      />
-      <PaddedContainer>
-        <SubHeading>Unhappy with your website?</SubHeading>
-        <SectionHeading>
-          We create beautiful and fast web services
-        </SectionHeading>
-      </PaddedContainer>
+    <div style={{ background: "#100E1D" }}>
+      <MainContainer>
+        <Navbar
+          title="Edie"
+          titleStyle={{
+            color: "#333333",
+            fontWeight: "800",
+            fontSize: "2.25rem",
+            fontFamily: "Heebo",
+          }}
+          menuItems={["Home", "Services", "Our Works", "Clients", "Contact"]}
+          menuItemStyle={{
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: "500",
+            fontSize: "1.5rem",
+            color: "#333333",
+          }}
+        />
+        <PaddedContainer>
+          <SubHeading>Unhappy with your website?</SubHeading>
+          <SectionHeading>
+            We create beautiful and fast web services
+          </SectionHeading>
+        </PaddedContainer>
 
-      <Image src="images/eddie/heroImage.jpg" alt="hero_image" />
+        <Image src="images/eddie/heroImage.jpg" alt="hero_image" />
 
-      <PaddedContainer>
-        <SectionHeading>Story, emotion and purpose</SectionHeading>
-        <Mission>
-          We help transform your ideas into real world applications that will
-          outperform your toughest competition and help you achieve your
-          strategic goals in short period of time.
-        </Mission>
-        <MissionAction>
-          <p>Want us to contact you?</p>
+        <PaddedContainer>
+          <SectionHeading>Story, emotion and purpose</SectionHeading>
+          <Mission>
+            We help transform your ideas into real world applications that will
+            outperform your toughest competition and help you achieve your
+            strategic goals in short period of time.
+          </Mission>
+          <ContactForm />
+        </PaddedContainer>
+
+        <PaddedContainer>
+          <SectionHeading>We offer high demand services</SectionHeading>
+          <BaseFlexContainer>
+            {services.map((service, idx) => (
+              <Service service={service} key={idx} />
+            ))}
+          </BaseFlexContainer>
+        </PaddedContainer>
+
+        <PaddedContainer>
+          <SectionHeading>Good design means good business</SectionHeading>
+          <ProductsContainer>
+            {products.map((product, idx) => (
+              <Product product={product} key={idx} />
+            ))}
+          </ProductsContainer>
+
+          <Span>
+            see more <StyledSpan>arrow_forward</StyledSpan>
+          </Span>
+        </PaddedContainer>
+        <PaddedContainer>
+          <TeamContainer>
+            <TeamDetails>
+              <SubHeading>Meet the team</SubHeading>
+              <SectionHeading>We are chilled and laidback</SectionHeading>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </TeamDetails>
+            <TeamGrid>
+              <img src={`/images/eddie/person3.png`} alt={"person3"} />
+              <img src={`/images/eddie/person1.png`} alt={"person1"} />
+              <img src={`/images/eddie/person2.png`} alt={"person2"} />
+            </TeamGrid>
+          </TeamContainer>
+        </PaddedContainer>
+        <PaddedContainer>
+          <TestimonialTitle>
+            “Fast and outstanding resutls. Edie understands their customer’s
+            needs. They have a young and talented team.”
+          </TestimonialTitle>
+          <ClientDetail>
+            <img src={"/images/eddie/person4.png"} alt="person 4" />
+            <div>
+              <p>Carlos Tran</p>
+              <p>The Decorate Gatsby</p>
+            </div>
+          </ClientDetail>
+        </PaddedContainer>
+      </MainContainer>
+      <Footer>
+        <ul>
+          {["Home", "Services", "Our Works", "Clients", "Contact"].map(
+            (item, idx) => (
+              <li key={idx}>{item}</li>
+            )
+          )}
+        </ul>
+        <div>
+          <p>Edie</p>
           <div>
-            <input type="text" placeholder="Email" />
-            <button>Join</button>
+            <img src="images/eddie/instagram.svg" alt="instagram" />
+            <img src="images/eddie/linkedin.svg" alt="linkedin" />
+            <img src="images/eddie/twitter.svg" alt="twitter" />
           </div>
-        </MissionAction>
-      </PaddedContainer>
-
-      <PaddedContainer>
-        <SectionHeading>We offer high demand services</SectionHeading>
-        <ServiceContainer>
-          {services.map((service, idx) => (
-            <Service service={service} key={idx} />
-          ))}
-        </ServiceContainer>
-      </PaddedContainer>
-
-      <PaddedContainer>
-        <SectionHeading>Good design means good business</SectionHeading>
-        <ProductsContainer>
-          {products.map((product, idx) => (
-            <Product product={product} key={idx} />
-          ))}
-        </ProductsContainer>
-
-        <Span>
-          see more <StyledSpan>arrow_forward</StyledSpan>
-        </Span>
-      </PaddedContainer>
-      <PaddedContainer>
-        <TeamContainer>
-          <TeamDetails>
-            <SubHeading>Meet the team</SubHeading>
-            <SectionHeading>We are chilled and laidback</SectionHeading>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </TeamDetails>
-          <TeamGrid>
-            <img src={`/images/eddie/person3.png`} alt={"person3"} />
-            <img src={`/images/eddie/person1.png`} alt={"person1"} />
-            <img src={`/images/eddie/person2.png`} alt={"person2"} />
-          </TeamGrid>
-        </TeamContainer>
-      </PaddedContainer>
-    </Container>
+        </div>
+        <ContactForm />
+      </Footer>
+    </div>
   );
 };
 export default EdieHomePage;
