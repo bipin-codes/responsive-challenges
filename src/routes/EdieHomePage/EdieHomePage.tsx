@@ -16,6 +16,9 @@ import {
   ProductCard,
   StyledSpan,
   Span,
+  TeamContainer,
+  TeamDetails,
+  TeamGrid,
 } from "./styles";
 
 type ServiceType = { bg: string; icon: string; title: string; content: string };
@@ -136,8 +139,8 @@ const EdieHomePage = () => {
       <PaddedContainer>
         <SectionHeading>We offer high demand services</SectionHeading>
         <ServiceContainer>
-          {services.map((service) => (
-            <Service service={service} />
+          {services.map((service, idx) => (
+            <Service service={service} key={idx} />
           ))}
         </ServiceContainer>
       </PaddedContainer>
@@ -145,14 +148,28 @@ const EdieHomePage = () => {
       <PaddedContainer>
         <SectionHeading>Good design means good business</SectionHeading>
         <ProductsContainer>
-          {products.map((product) => (
-            <Product product={product} />
+          {products.map((product, idx) => (
+            <Product product={product} key={idx} />
           ))}
         </ProductsContainer>
 
         <Span>
           see more <StyledSpan>arrow_forward</StyledSpan>
         </Span>
+      </PaddedContainer>
+      <PaddedContainer>
+        <TeamContainer>
+          <TeamDetails>
+            <SubHeading>Meet the team</SubHeading>
+            <SectionHeading>We are chilled and laidback</SectionHeading>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </TeamDetails>
+          <TeamGrid>
+            <img src={`/images/eddie/person3.png`} alt={"person3"} />
+            <img src={`/images/eddie/person1.png`} alt={"person1"} />
+            <img src={`/images/eddie/person2.png`} alt={"person2"} />
+          </TeamGrid>
+        </TeamContainer>
       </PaddedContainer>
     </Container>
   );

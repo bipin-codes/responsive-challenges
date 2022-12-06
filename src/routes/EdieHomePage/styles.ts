@@ -122,6 +122,7 @@ export const ProductsContainer = styled(BlankContainer)`
   gap: 1rem;
   grid-template-columns: auto auto;
   margin: auto;
+  justify-content: space-between;
   align-items: flex-start;
   div:nth-child(odd) {
     margin: 10rem 0 0 0;
@@ -133,6 +134,7 @@ export const ProductCard = styled(BlankContainer)`
   width: 100%;
   img {
     border-radius: 12px;
+    // flex: 1;
     width: 100%;
   }
   > p:nth-child(2) {
@@ -154,7 +156,41 @@ export const Span = styled.div`
   color: #2d9cdb;
   font-weight: 500;
   font-size: 1.5rem;
+
+  :hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 export const StyledSpan = styled.span.attrs({
   className: "material-symbols-outlined",
-})``;
+})`
+  :hover {
+    text-decoration: none;
+  }
+`;
+
+export const TeamContainer = styled(BlankContainer)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const TeamDetails = styled(BlankContainer)`
+  > p:last-child {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+`;
+
+export const TeamGrid = styled(BlankContainer)`
+  display: grid;
+  grid-template-columns: auto auto;
+  img {
+    margin: 1rem;
+    border-radius: 1.75rem;
+  }
+  > img:first-child {
+    grid-row: 1/3;
+    align-self: center;
+  }
+`;
