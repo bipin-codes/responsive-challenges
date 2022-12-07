@@ -14,7 +14,7 @@ export const StyledContainer = styled(BlankContainer)`
 export const Title = styled(Heading)`
   border: 1px solid #fff;
   width: 6.375rem;
-  color: ${(props) => (props.theme === "light" ? "#000" : "#fff")};
+  color: white;
   text-align: center;
   font-size: 0.875rem;
   font-weight: 200;
@@ -25,10 +25,10 @@ export const Title = styled(Heading)`
   }
 `;
 
-export const Menu = styled(BlankContainer)`
+export const Menu = styled(BlankContainer)<{ break: string }>`
   padding: 0.5rem 0;
 
-  @media (max-width: 800px) {
+  @media (max-width: ${(props) => props.break}) {
     display: none;
   }
 `;
@@ -39,16 +39,17 @@ export const MenuItem = styled.li`
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   :hover {
-    border-bottom-color: white;
+    border-bottom-color: ${(props) =>
+      props.theme === "light" ? "#000" : "#fff"};
     cursor: pointer;
   }
 `;
 
-export const MenuButton = styled.button`
+export const MenuButton = styled.button<{ theme: string; break: string }>`
   border: none;
   background: transparent;
-  color: #fff;
-  @media (min-width: 801px) {
+  color: ${(props) => (props.theme === "light" ? "#000" : "#fff")};
+  @media (min-width: ${(props) => props.break}) {
     display: none;
   }
 `;

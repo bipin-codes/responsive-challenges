@@ -5,11 +5,11 @@ export const StyledContainer = styled(Container)`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: #181719;
+  background-color: ${(props) => (props.theme === "dark" ? "#000" : "#fff")};
   z-index: 1000;
   top: 0;
   left: 0;
-  color: #fff;
+  color: ${(props) => (props.theme === "light" ? "#000" : "#fff")};
 `;
 
 export const MobileMenu = styled.ul`
@@ -28,7 +28,7 @@ export const MobileMenuItem = styled(MenuItem)`
 export const CloseButton = styled.button`
   align-self: flex-end;
   background: transparent;
-  color: white;
+  color: ${(props) => (props.theme === "light" ? "#000" : "#fff")};
   border: 0;
   font-size: 3rem;
 `;

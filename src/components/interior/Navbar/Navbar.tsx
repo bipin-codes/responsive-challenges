@@ -10,7 +10,16 @@ const Navbar: React.FC<{
   showCaps?: boolean;
   titleStyle?: CSSProperties;
   menuItemStyle?: CSSProperties;
-}> = ({ title, menuItems, titleStyle, menuItemStyle }) => {
+  theme?: "light" | "dark";
+  breakAt?: string;
+}> = ({
+  title,
+  menuItems,
+  titleStyle,
+  menuItemStyle,
+  theme = "dark",
+  breakAt = "801px",
+}) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);
@@ -21,10 +30,15 @@ const Navbar: React.FC<{
       <Title style={titleStyle ?? {}}>
         <span>{title ?? "New Title"}</span>
       </Title>
-      <MenuButton type="button" onClick={toggleMenu}>
+      <MenuButton
+        break={breakAt}
+        type="button"
+        onClick={toggleMenu}
+        theme={theme}
+      >
         <span className="material-symbols-outlined">menu</span>
       </MenuButton>
-      <Menu>
+      <Menu break={breakAt}>
         <ul
           style={{
             display: "flex",
@@ -35,7 +49,7 @@ const Navbar: React.FC<{
         >
           {menuItems
             ? menuItems.map((item, idx) => (
-                <MenuItem style={menuItemStyle || {}} key={idx}>
+                <MenuItem style={menuItemStyle || {}} key={idx} theme={theme}>
                   {item}
                 </MenuItem>
               ))
@@ -43,7 +57,11 @@ const Navbar: React.FC<{
         </ul>
       </Menu>
       {mobileMenu ? (
-        <MobileMenuPortal onClose={toggleMenu} items={menuItems ?? [""]} />
+        <MobileMenuPortal
+          theme={theme}
+          onClose={toggleMenu}
+          items={menuItems ?? [""]}
+        />
       ) : null}
     </StyledContainer>
   );

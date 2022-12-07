@@ -11,3 +11,7 @@ export const BlankContainer = styled.div``;
 export const Footer = styled.div`
   padding: 5rem;
 `;
+
+export const BaseFlexContainer = styled(BlankContainer)`
+  display: flex;
+`;

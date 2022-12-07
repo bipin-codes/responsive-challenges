@@ -8,13 +8,16 @@ import {
   StyledContainer,
 } from "./styles";
 
-const MobileMenuPortal: React.FC<{ items: string[]; onClose: () => void }> = ({
-  items,
-  onClose,
-}) =>
+const MobileMenuPortal: React.FC<{
+  theme?: "light" | "dark";
+  items: string[];
+  onClose: () => void;
+}> = ({ items, onClose, theme = "dark" }) =>
   ReactDOM.createPortal(
-    <StyledContainer>
-      <CloseButton onClick={onClose}>X</CloseButton>
+    <StyledContainer theme={theme}>
+      <CloseButton theme={theme} onClick={onClose}>
+        X
+      </CloseButton>
       <MobileMenu>
         {items.map((item, idx) => (
           <MobileMenuItem key={idx}>{item}</MobileMenuItem>

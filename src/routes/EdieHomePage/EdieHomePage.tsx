@@ -1,19 +1,18 @@
+import ContactForm from "components/Eddie/ContactForm/ContactForm";
+import Product, { ProductType } from "components/Eddie/Product/Product";
+import { ServiceType } from "components/Eddie/Service/types";
+import Service from "components/Eddie/Service/Service";
+
 import Navbar from "components/interior/Navbar";
 import { useState } from "react";
+
 import {
   PaddedContainer,
   Image,
   SectionHeading,
   SubHeading,
   Mission,
-  MissionAction,
-  ServiceCard,
-  BaseFlexContainer,
-  ServiceCardIconContainer,
-  ServiceCardTitle,
   ProductsContainer,
-  ProductCard,
-  StyledSpan,
   Span,
   TeamContainer,
   TeamDetails,
@@ -22,43 +21,9 @@ import {
   ClientDetail,
   MainContainer,
   Footer,
+  StyledSpan,
+  ServiceContainer,
 } from "./styles";
-
-type ServiceType = { bg: string; icon: string; title: string; content: string };
-type ProductType = { category: string; img: string; name: string };
-
-const Service: React.FC<{ service: ServiceType }> = ({ service }) => {
-  return (
-    <ServiceCard>
-      <ServiceCardIconContainer color={service.bg}>
-        <StyledSpan>{service.icon}</StyledSpan>
-      </ServiceCardIconContainer>
-      <ServiceCardTitle>{service.title}</ServiceCardTitle>
-      <p>{service.content}</p>
-      <button>Get started</button>
-    </ServiceCard>
-  );
-};
-
-const Product: React.FC<{ product: ProductType }> = ({ product }) => {
-  return (
-    <ProductCard>
-      <img src={`/images/eddie/${product.img}`} alt={"product_img"} />
-      <p>{product.category}</p>
-      <p>{product.name}</p>
-    </ProductCard>
-  );
-};
-
-const ContactForm = () => (
-  <MissionAction>
-    <p>Want us to contact you?</p>
-    <div>
-      <input type="text" placeholder="Email" />
-      <button>Join</button>
-    </div>
-  </MissionAction>
-);
 
 const EdieHomePage = () => {
   const [services] = useState<ServiceType[]>([
@@ -110,6 +75,8 @@ const EdieHomePage = () => {
     <div style={{ background: "#100E1D" }}>
       <MainContainer>
         <Navbar
+          breakAt="1100px"
+          theme="light"
           title="Edie"
           titleStyle={{
             color: "#333333",
@@ -146,11 +113,11 @@ const EdieHomePage = () => {
 
         <PaddedContainer>
           <SectionHeading>We offer high demand services</SectionHeading>
-          <BaseFlexContainer>
+          <ServiceContainer>
             {services.map((service, idx) => (
               <Service service={service} key={idx} />
             ))}
-          </BaseFlexContainer>
+          </ServiceContainer>
         </PaddedContainer>
 
         <PaddedContainer>
