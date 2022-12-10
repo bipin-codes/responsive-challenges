@@ -160,6 +160,9 @@ export const TeamGrid = styled(BlankContainer)`
 export const TestimonialTitle = styled.p`
   font-weight: 500;
   font-size: 2.25rem;
+  @media (max-width: 800px) {
+    font-size: 1.5rem;
+  }
 `;
 export const ClientDetail = styled(BaseFlexContainer)`
   margin: 2rem 0;
