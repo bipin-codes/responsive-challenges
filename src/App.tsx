@@ -9,6 +9,7 @@ const Links = [
   { to: "/gallery", label: "Gallery challenge." },
   { to: "/checkout", label: "Checkout page challenge." },
   { to: "/homepage", label: "Eddie home challenge." },
+  { to: "/portfolio", label: "Portfolio Challenge." },
 ];
 const App = () => {
   return (

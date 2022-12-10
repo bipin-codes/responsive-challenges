@@ -10,7 +10,6 @@ export const MissionAction = styled(BlankContainer)`
   > div {
     display: flex;
     flex-direction: row;
-    // width: 80%;
     max-width: 500px;
     background: #f2f2f2;
     justify-content: space-between;
