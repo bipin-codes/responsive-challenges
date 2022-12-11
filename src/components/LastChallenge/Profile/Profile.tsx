@@ -1,16 +1,14 @@
-import React from "react";
+import React from 'react';
+import { Default, Root, Image } from '../common/styles';
 import {
   Contact,
   ContactItem,
-  Default,
   Details,
-  Image,
   NameAndTag,
   PersonDescription,
   PersonDetail,
-  Root,
   StyledSpan,
-} from "./styles";
+} from './styles';
 const Profile: React.FC = () => {
   return (
     <Default>

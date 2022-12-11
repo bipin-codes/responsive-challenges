@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const Button = styled.button`
   padding: 1rem;
   outline: none;
@@ -7,4 +7,5 @@ export const Button = styled.button`
   background: #5050ff;
   font-weight: 700;
   color: #fff;
+  margin: 1rem;
 `;
