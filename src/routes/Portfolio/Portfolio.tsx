@@ -1,20 +1,19 @@
-import Profile from 'components/LastChallenge/Profile';
-import RecipeBlog from 'components/LastChallenge/RecipeBlog';
-import Technologies from 'components/LastChallenge/Technologies/Technologies';
-import React, { PropsWithChildren, useState } from 'react';
-import { Button } from './styles';
+import Profile from "components/LastChallenge/Profile";
+import RecipeBlog from "components/LastChallenge/RecipeBlog";
+import Technologies from "components/LastChallenge/Technologies/Technologies";
+import React, { PropsWithChildren, useState } from "react";
+import { Button } from "./styles";
 
 const Portfolio: React.FC<PropsWithChildren> = ({ children }) => {
-  const [component, setComponent] = useState('personCard');
+  const [component, setComponent] = useState("personCard");
 
   const renderComponent = () => {
     switch (component) {
-      case 'personCard':
+      case "personCard":
         return <Profile />;
-      case 'blogCard':
+      case "blogCard":
         return <RecipeBlog />;
-
-      case 'technologies':
+      case "technologies":
         return <Technologies />;
       default:
         return null;
@@ -24,13 +23,13 @@ const Portfolio: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div
       style={{
-        background: '#f2f2f2',
+        background: "#f2f2f2",
       }}
     >
       <Button
         type="button"
         onClick={() => {
-          setComponent('personCard');
+          setComponent("personCard");
         }}
       >
         Profile Card
@@ -38,7 +37,7 @@ const Portfolio: React.FC<PropsWithChildren> = ({ children }) => {
       <Button
         type="button"
         onClick={() => {
-          setComponent('blogCard');
+          setComponent("blogCard");
         }}
       >
         Recipe Card
@@ -47,7 +46,7 @@ const Portfolio: React.FC<PropsWithChildren> = ({ children }) => {
       <Button
         type="button"
         onClick={() => {
-          setComponent('technologies');
+          setComponent("technologies");
         }}
       >
         Technologies
